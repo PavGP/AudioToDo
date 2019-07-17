@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_launcer_new"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -38,6 +38,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pavgp.audiotodo.activities.MainActivity" />
         </activity>
+        <activity
+            android:name="com.pavgp.audiotodo.activities.ReminderActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/action_settings"
+            android:parentActivityName="com.pavgp.audiotodo.activities.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pavgp.audiotodo.activities.MainActivity" />
+        </activity>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.pavgp.audiotodo.fileprovider"
@@ -48,6 +57,10 @@
                 android:resource="@xml/filepaths" />
         </provider>
         <service android:name="com.pavgp.audiotodo.RecordingService" />
+        <service android:name=".Utility.TodoNotificationService"
+            />
+        <service android:name=".Utility.DeleteNotificationService"
+            />
     </application>
 
 </manifest>
