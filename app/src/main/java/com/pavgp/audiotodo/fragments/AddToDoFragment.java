@@ -124,6 +124,18 @@ public class AddToDoFragment extends AppDefaultFragment implements DatePickerDia
         }
 
 
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // perform whatever you want on back arrow click
+                hideKeyboard(mToDoTextBodyEditText);
+                hideKeyboard(mToDoTextBodyDescription);
+                getActivity().onBackPressed();
+
+            }
+        });
+
+
         mUserToDoItem = (ToDoItem) getActivity().getIntent().getSerializableExtra(TextToDoFragment.TODOITEM);
 
         mUserEnteredText = mUserToDoItem.getToDoText();
@@ -555,7 +567,7 @@ public class AddToDoFragment extends AppDefaultFragment implements DatePickerDia
         if (mUserReminderDate != null) {
             mReminderTextView.setVisibility(View.VISIBLE);
             if (mUserReminderDate.before(new Date())) {
-                Log.d("OskarSchindler", "DATE is " + mUserReminderDate);
+                Log.d("PavGP", "DATE is " + mUserReminderDate);
                 mReminderTextView.setText(getString(R.string.date_error_check_again));
                 mReminderTextView.setTextColor(Color.RED);
                 return;
