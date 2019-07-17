@@ -3,13 +3,14 @@
               android:layout_width="match_parent"
               android:id="@+id/listItemLinearLayout"
               android:layout_marginBottom="1dp"
-              android:gravity="center"
+              android:gravity="top"
               android:orientation="horizontal"
-              android:layout_height="match_parent"
+              android:layout_height="wrap_content"
               xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
         android:id="@+id/toDoListItemColorImageView"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:layout_marginLeft="16dp"
         android:layout_width="45dp"
