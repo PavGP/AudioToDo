@@ -104,8 +104,8 @@ public class TextToDoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View recordView = inflater.inflate(R.layout.fragment_main, container, false);
-       // super.onViewCreated(recordView, savedInstanceState);
-       // app = (AnalyticsApplication) getActivity().getApplication();
+        super.onViewCreated(recordView, savedInstanceState);
+//        app = (AnalyticsApplication) getActivity().getApplication();
 //        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
 //                .setDefaultFontPath("fonts/Aller_Regular.tff").setFontAttrId(R.attr.fontPath).build());
 
@@ -202,7 +202,7 @@ public class TextToDoFragment extends Fragment {
 //            mRecyclerView.setBackgroundColor(getResources().getColor(R.color.primary_lightest));
 //        }
         mRecyclerView.setEmptyView(recordView.findViewById(R.id.toDoEmptyView));
-        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setHasFixedSize(false);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -431,7 +431,7 @@ public class TextToDoFragment extends Fragment {
             PendingIntent pi = PendingIntent.getService(getContext(), requestCode, i, PendingIntent.FLAG_NO_CREATE);
             pi.cancel();
             getAlarmManager().cancel(pi);
-            Log.d("OskarSchindler", "PI Cancelled " + doesPendingIntentExist(i, requestCode));
+            Log.d("pavGP", "PI Cancelled " + doesPendingIntentExist(i, requestCode));
         }
     }
 
