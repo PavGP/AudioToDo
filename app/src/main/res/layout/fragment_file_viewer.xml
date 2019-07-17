@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_file_viewer"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     tools:context="com.pavgp.audiotodo.fragments.FileViewerFragment">
 
     <android.support.v7.widget.RecyclerView
